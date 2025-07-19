@@ -26,7 +26,7 @@ def highlight_skills(resume_text, jd_text):
 # --------------------------
 st.set_page_config(page_title="AI Resume Scanner", layout="centered")
 
-st.title("🤖 AI Resume Scanner")
+st.title(" AI Resume Scanner")
 st.markdown("Upload resumes and paste the job description to see match scores.")
 
 # --------------------------
@@ -79,16 +79,16 @@ if st.button("Analyze Resumes"):
         # --------------------------
         # Display Results
         # --------------------------
-        st.subheader("📊 Resume Match Results")
+        st.subheader(" Resume Match Results")
 
         for res in sorted_results:
-            st.markdown(f"### 📄 {res['filename']}")
-            st.success(f"✅ Match Score: {res['score']:.2f}%")
+            st.markdown(f"###  {res['filename']}")
+            st.success(f" Match Score: {res['score']:.2f}%")
 
-            st.markdown("**🟢 Matched Skills:**")
+            st.markdown("** Matched Skills:**")
             st.markdown(", ".join([f"`{skill}`" for skill in res["matched"]]) or "None")
 
-            st.markdown("**🔴 Missing Skills:**")
+            st.markdown("** Missing Skills:**")
             st.markdown(", ".join([f"`{skill}`" for skill in res["missing"]]) or "None")
 
             st.markdown("---")
@@ -96,7 +96,7 @@ if st.button("Analyze Resumes"):
         # --------------------------
         # Bar Chart Visualization
         # --------------------------
-        st.subheader("📈 Match Score Comparison")
+        st.subheader(" Match Score Comparison")
         chart_data = pd.DataFrame({
             'Resume': [res['filename'] for res in sorted_results],
             'Match Score (%)': [res['score'] for res in sorted_results]
